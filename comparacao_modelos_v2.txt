@@ -1,14 +1,80 @@
 # COMPARAÇÃO MODELOS V2
 
-## COMPARAÇÃO ORIGINAL VS MELHORADO V2
+## COMPARAÇÃO ENTRE MODELOS - ORIGINAL VS MELHORADO V2
+===================================================
 
-| Fila | População Média | Throughput | Utilização | Tempo Médio de Resposta | Clientes Perdidos |
-|------|-----------------|------------|------------|------------------------|-------------------|
-| Triagem | -18.23% | -0.03% | -12.50% | 0.00% | 0.00% |
-| Emergência | -25.64% | -0.09% | -13.43% | +100.00% | 0.00% |
-| Consulta | -33.15% | -0.01% | -43.62% | +100.00% | 0.00% |
-| Internação | -115.34% | +431.19% | -0.12% | +65.32% | +91.23% |
-| Alta | -3.62% | +32.87% | -11.04% | +95.61% | 0.00% |
+MÉTRICAS GERAIS
+---------------
+| Métrica | Modelo Original | Modelo Melhorado V2 | Melhoria |
+|---------|----------------|-------------------|----------|
+| Tempo Total (min) | 10000 | 234290.42 | +224290.42 |
+| Clientes Perdidos | 7066 | 620 | -91.23% |
+| Throughput Total (clientes/min) | 0.1000 | 0.1000 | 0% |
+| Tempo Médio de Resposta (min) | 1047.94 | 363.46 | -65.32% |
+
+ANÁLISE POR FILA
+---------------
+
+1. TRIAGEM (M/M/3/15)
+| Métrica | Original | Melhorado V2 | Melhoria |
+|---------|----------|--------------|----------|
+| População Média | 0.55 | 0.45 | -18.18% |
+| Throughput | 0.1000 | 0.1000 | 0% |
+| Utilização | 27.48% | 14.98% | -45.49% |
+| Tempo de Resposta | 0.00 | 0.00 | 0% |
+| Clientes Perdidos | 0 | 0 | 0% |
+
+2. EMERGÊNCIA (M/M/4/12)
+| Métrica | Original | Melhorado V2 | Melhoria |
+|---------|----------|--------------|----------|
+| População Média | 0.92 | 0.68 | -26.09% |
+| Throughput | 0.0304 | 0.0304 | 0% |
+| Utilização | 30.53% | 17.10% | -43.99% |
+| Tempo de Resposta | 0.14 | 0.00 | -100% |
+| Clientes Perdidos | 0 | 0 | 0% |
+
+3. CONSULTA (M/M/4/20)
+| Métrica | Original | Melhorado V2 | Melhoria |
+|---------|----------|--------------|----------|
+| População Média | 1.57 | 1.05 | -33.12% |
+| Throughput | 0.0696 | 0.0696 | 0% |
+| Utilização | 69.78% | 26.16% | -62.51% |
+| Tempo de Resposta | 2.44 | 0.00 | -100% |
+| Clientes Perdidos | 0 | 0 | 0% |
+
+4. INTERNAÇÃO (M/M/4/15)
+| Métrica | Original | Melhorado V2 | Melhoria |
+|---------|----------|--------------|----------|
+| População Média | 6.85 | 14.74 | +115.18% |
+| Throughput | 0.0056 | 0.0296 | +428.57% |
+| Utilização | 99.99% | 99.86% | -0.13% |
+| Tempo de Resposta | 1047.94 | 363.46 | -65.32% |
+| Clientes Perdidos | 7066 | 620 | -91.23% |
+
+5. ALTA (M/M/2/25)
+| Métrica | Original | Melhorado V2 | Melhoria |
+|---------|----------|--------------|----------|
+| População Média | 0.28 | 0.29 | +3.57% |
+| Throughput | 0.0732 | 0.0973 | +32.92% |
+| Utilização | 25.61% | 14.58% | -43.07% |
+| Tempo de Resposta | 0.36 | 0.02 | -94.44% |
+| Clientes Perdidos | 0 | 0 | 0% |
+
+CONCLUSÕES
+----------
+1. Melhorias Gerais:
+   - Redução drástica de clientes perdidos (-91.23%)
+   - Redução significativa no tempo médio de resposta (-65.32%)
+   - Aumento no throughput da fila de internação (+428.57%)
+
+2. Pontos de Atenção:
+   - A fila de internação ainda apresenta alta utilização (99.86%)
+   - Aumento na população média da fila de internação (+115.18%)
+
+3. Recomendações:
+   - Considerar aumento adicional de servidores na fila de internação
+   - Monitorar a população média da fila de internação
+   - Avaliar a necessidade de ajustes nos parâmetros de chegada
 
 ## ANÁLISE DE IMPACTO
 

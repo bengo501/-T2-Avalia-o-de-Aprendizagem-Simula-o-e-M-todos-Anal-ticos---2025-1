@@ -4,65 +4,77 @@
 
 | Métrica | Valor |
 |---------|-------|
-| Tempo Total de Simulação | 10000 minutos |
+| Tempo Total de Simulação | 234290.42 minutos |
 | Número Total de Clientes | 1000 |
-| Clientes Perdidos | 7066 |
+| Clientes Perdidos | 620 |
 | Throughput Total | 0.1000 clientes/min |
-| Tempo Médio de Resposta | 1047.94 minutos |
+| Tempo Médio de Resposta | 363.46 minutos |
 
 ## ANÁLISE POR FILA
 
 ### Triagem
 | Métrica | Valor |
 |---------|-------|
-| População Média | 0.55 |
+| População Média | 0.45 |
 | Throughput | 0.1000 clientes/min |
-| Utilização | 27.48% |
+| Utilização | 14.98% |
 | Tempo Médio de Resposta | 0.00 minutos |
 | Clientes Perdidos | 0 |
 
 ### Emergência
 | Métrica | Valor |
 |---------|-------|
-| População Média | 0.92 |
+| População Média | 0.68 |
 | Throughput | 0.0304 clientes/min |
-| Utilização | 30.53% |
-| Tempo Médio de Resposta | 0.14 minutos |
+| Utilização | 17.10% |
+| Tempo Médio de Resposta | 0.00 minutos |
 | Clientes Perdidos | 0 |
 
 ### Consulta
 | Métrica | Valor |
 |---------|-------|
-| População Média | 1.57 |
+| População Média | 1.05 |
 | Throughput | 0.0696 clientes/min |
-| Utilização | 69.78% |
-| Tempo Médio de Resposta | 2.44 minutos |
+| Utilização | 26.16% |
+| Tempo Médio de Resposta | 0.00 minutos |
 | Clientes Perdidos | 0 |
 
 ### Internação
 | Métrica | Valor |
 |---------|-------|
-| População Média | 6.85 |
-| Throughput | 0.0056 clientes/min |
-| Utilização | 99.99% |
-| Tempo Médio de Resposta | 1047.94 minutos |
-| Clientes Perdidos | 7066 |
+| População Média | 14.74 |
+| Throughput | 0.0296 clientes/min |
+| Utilização | 99.86% |
+| Tempo Médio de Resposta | 363.46 minutos |
+| Clientes Perdidos | 620 |
 
 ### Alta
 | Métrica | Valor |
 |---------|-------|
-| População Média | 0.28 |
-| Throughput | 0.0732 clientes/min |
-| Utilização | 25.61% |
-| Tempo Médio de Resposta | 0.36 minutos |
+| População Média | 0.29 |
+| Throughput | 0.0973 clientes/min |
+| Utilização | 14.58% |
+| Tempo Médio de Resposta | 0.02 minutos |
 | Clientes Perdidos | 0 |
 
 ## PROBABILIDADES DOS ESTADOS DAS FILAS
 
 | Fila | Estado 0 | Estado 1 | Estado 2 | Estado 3 | Estado 4 | Estado 5+ |
 |------|----------|----------|----------|----------|----------|-----------|
-| Triagem | 72.52% | 19.94% | 5.48% | 1.51% | 0.41% | 0.14% |
-| Emergência | 69.47% | 21.17% | 6.45% | 1.97% | 0.60% | 0.34% |
-| Consulta | 30.22% | 26.38% | 23.03% | 20.12% | 17.57% | 2.68% |
-| Internação | 0.01% | 0.03% | 0.08% | 0.21% | 0.55% | 99.12% |
-| Alta | 74.39% | 18.60% | 4.65% | 1.16% | 0.29% | 0.91% | 
+| Triagem | 55.10% | 44.85% | 0.05% | 0.00% | 0.00% | 0.00% |
+| Emergência | 45.71% | 41.42% | 11.64% | 1.21% | 0.02% | 0.00% |
+| Consulta | 21.50% | 53.85% | 23.17% | 1.47% | 0.01% | 0.00% |
+| Internação | 0.03% | 0.02% | 0.07% | 0.34% | 0.67% | 1.03% |
+| Alta | 73.64% | 23.57% | 2.64% | 0.14% | 0.01% | 0.00% |
+
+## ANÁLISE DE DESEMPENHO
+
+1. Triagem: Utilização reduzida para 14.98%, indicando melhor distribuição da carga.
+2. Emergência: Tempo de resposta eliminado, com utilização de apenas 17.10%.
+3. Consulta: Utilização reduzida para 26.16%, com tempo de resposta eliminado.
+4. Internação: Ainda apresenta alta utilização (99.86%), mas com redução significativa no tempo de resposta (363.46 minutos vs 1047.94 minutos original).
+5. Alta: Throughput aumentado para 0.0973 clientes/minuto, com utilização reduzida para 14.58%.
+
+## CONCLUSÕES
+
+A configuração melhorada v2 demonstra melhorias significativas em todas as filas, com redução nos tempos de resposta e melhor utilização dos recursos. A fila de internação ainda apresenta desafios, mas com redução drástica no número de clientes perdidos (620 vs 7066). 
