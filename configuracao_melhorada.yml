@@ -1,0 +1,53 @@
+queues:
+  alta:
+    arrival:
+      max: 0
+      min: 0
+    routing: []
+    service:
+      max: 4
+      min: 2
+    type: M/M/2/25
+  consulta:
+    arrival:
+      max: 0
+      min: 0
+    routing:
+    - alta: 0.7
+    - internacao: 0.3
+    service:
+      max: 25
+      min: 10
+    type: M/M/3/15
+  emergencia:
+    arrival:
+      max: 0
+      min: 0
+    routing:
+    - alta: 0.6
+    - internacao: 0.4
+    service:
+      max: 35
+      min: 15
+    type: M/M/4/10
+  internacao:
+    arrival:
+      max: 0
+      min: 0
+    routing:
+    - alta: 1.0
+    service:
+      max: 180
+      min: 120
+    type: M/M/2/8
+  triagem:
+    arrival:
+      max: 15
+      min: 5
+    routing:
+    - emergencia: 0.3
+    - consulta: 0.7
+    service:
+      max: 6
+      min: 3
+    type: M/M/3/15

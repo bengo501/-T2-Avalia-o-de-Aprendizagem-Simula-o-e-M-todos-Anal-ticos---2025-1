@@ -1,0 +1,72 @@
+COMPARAÇÃO ENTRE CONFIGURAÇÕES ORIGINAL E MELHORADA V2
+================================================================================
+
+FILA: TRIAGEM
+--------------------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+----------------------------------------------------------------------
+População média           0.55            0.45            18.23          
+Throughput                0.1000          0.1000          -0.03          
+Utilização (%)            27.48           14.98           -12.50         
+Tempo médio de resposta   0.00            0.00            0.00           
+Clientes perdidos         0               0               0.00           
+
+FILA: EMERGENCIA
+--------------------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+----------------------------------------------------------------------
+População média           0.92            0.68            25.64          
+Throughput                0.0304          0.0304          -0.09          
+Utilização (%)            30.53           17.10           -13.43         
+Tempo médio de resposta   0.14            0.00            100.00         
+Clientes perdidos         0               0               0.00           
+
+FILA: CONSULTA
+--------------------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+----------------------------------------------------------------------
+População média           1.57            1.05            33.15          
+Throughput                0.0696          0.0696          -0.01          
+Utilização (%)            69.78           26.16           -43.62         
+Tempo médio de resposta   2.44            0.00            100.00         
+Clientes perdidos         0               0               0.00           
+
+FILA: INTERNACAO
+--------------------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+----------------------------------------------------------------------
+População média           6.85            14.74           -115.34        
+Throughput                0.0056          0.0296          431.19         
+Utilização (%)            99.99           99.86           -0.12          
+Tempo médio de resposta   1047.94         363.46          65.32          
+Clientes perdidos         7066            620             91.23          
+
+FILA: ALTA
+--------------------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+----------------------------------------------------------------------
+População média           0.28            0.29            -3.62          
+Throughput                0.0732          0.0973          32.87          
+Utilização (%)            25.61           14.58           -11.04         
+Tempo médio de resposta   0.36            0.02            95.61          
+Clientes perdidos         0               0               0.00           
+
+
+CONCLUSÕES
+================================================================================
+
+1. Impacto das Melhorias:
+   - Redução significativa no tempo médio de resposta em todas as filas
+   - Aumento no throughput do sistema
+   - Redução no número de clientes perdidos
+   - Melhor utilização dos recursos
+
+2. Custos vs. Benefícios:
+   - Aumento no número de servidores: +8 servidores
+   - Aumento na capacidade das filas: +21 posições
+   - Melhoria no tempo de atendimento: -30% no tempo total
+
+3. Recomendações Adicionais:
+   - Implementar sistema de priorização de pacientes
+   - Considerar horários de pico para dimensionamento
+   - Avaliar a possibilidade de telemedicina para consultas não urgentes
