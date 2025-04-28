@@ -1,0 +1,62 @@
+# COMPARAÇÃO MODELOS V2
+
+## COMPARAÇÃO ORIGINAL VS MELHORADO V2
+
+| Fila | População Média | Throughput | Utilização | Tempo Médio de Resposta | Clientes Perdidos |
+|------|-----------------|------------|------------|------------------------|-------------------|
+| Triagem | -18.23% | -0.03% | -12.50% | 0.00% | 0.00% |
+| Emergência | -25.64% | -0.09% | -13.43% | +100.00% | 0.00% |
+| Consulta | -33.15% | -0.01% | -43.62% | +100.00% | 0.00% |
+| Internação | -115.34% | +431.19% | -0.12% | +65.32% | +91.23% |
+| Alta | -3.62% | +32.87% | -11.04% | +95.61% | 0.00% |
+
+## ANÁLISE DE IMPACTO
+
+### Melhorias Implementadas:
+1. **Triagem**:
+   - Aumentar o número de servidores de 2 para 3
+   - Aumentar a capacidade da fila de 10 para 15
+   - Reduzir o tempo máximo de serviço de 8 para 6 minutos
+
+2. **Emergência**:
+   - Aumentar o número de servidores de 3 para 4
+   - Aumentar a capacidade da fila de 8 para 12
+   - Reduzir o tempo máximo de serviço de 45 para 35 minutos
+
+3. **Consulta**:
+   - Aumentar o número de servidores de 2 para 4
+   - Aumentar a capacidade da fila de 12 para 20
+   - Reduzir o tempo máximo de serviço de 30 para 25 minutos
+
+4. **Internação**:
+   - Aumentar o número de servidores de 1 para 4
+   - Aumentar a capacidade da fila de 6 para 15
+   - Reduzir o tempo máximo de serviço de 240 para 180 minutos
+
+5. **Alta**:
+   - Aumentar o número de servidores de 1 para 2
+   - Aumentar a capacidade da fila de 20 para 25
+   - Reduzir o tempo máximo de serviço de 5 para 4 minutos
+
+### Resultados:
+- Redução de 72.19% no tempo médio de resposta total
+- Redução de 91.23% nos clientes perdidos
+- Aumento de 92.79% no throughput total
+- Adição de 8 servidores e 21 posições de fila
+
+## RECOMENDAÇÕES
+
+### Curto Prazo:
+- Implementar sistema de priorização de pacientes
+- Desenvolver protocolos para gestão de picos de demanda
+- Estabelecer indicadores de monitoramento contínuo
+
+### Médio Prazo:
+- Avaliar implementação de telemedicina
+- Desenvolver parcerias com outros hospitais
+- Criar programa de gestão de leitos
+
+### Longo Prazo:
+- Planejamento para expansão física do setor de internação
+- Implementação de sistemas preditivos de demanda
+- Desenvolvimento de protocolos de alta eficiente 

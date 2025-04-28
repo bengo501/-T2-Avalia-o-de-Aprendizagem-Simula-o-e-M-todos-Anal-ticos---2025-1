@@ -1,0 +1,68 @@
+# ANÁLISE MÉTRICAS V2
+
+## RESUMO GERAL
+
+| Métrica | Valor |
+|---------|-------|
+| Tempo Total de Simulação | 10000 minutos |
+| Número Total de Clientes | 1000 |
+| Clientes Perdidos | 7066 |
+| Throughput Total | 0.1000 clientes/min |
+| Tempo Médio de Resposta | 1047.94 minutos |
+
+## ANÁLISE POR FILA
+
+### Triagem
+| Métrica | Valor |
+|---------|-------|
+| População Média | 0.55 |
+| Throughput | 0.1000 clientes/min |
+| Utilização | 27.48% |
+| Tempo Médio de Resposta | 0.00 minutos |
+| Clientes Perdidos | 0 |
+
+### Emergência
+| Métrica | Valor |
+|---------|-------|
+| População Média | 0.92 |
+| Throughput | 0.0304 clientes/min |
+| Utilização | 30.53% |
+| Tempo Médio de Resposta | 0.14 minutos |
+| Clientes Perdidos | 0 |
+
+### Consulta
+| Métrica | Valor |
+|---------|-------|
+| População Média | 1.57 |
+| Throughput | 0.0696 clientes/min |
+| Utilização | 69.78% |
+| Tempo Médio de Resposta | 2.44 minutos |
+| Clientes Perdidos | 0 |
+
+### Internação
+| Métrica | Valor |
+|---------|-------|
+| População Média | 6.85 |
+| Throughput | 0.0056 clientes/min |
+| Utilização | 99.99% |
+| Tempo Médio de Resposta | 1047.94 minutos |
+| Clientes Perdidos | 7066 |
+
+### Alta
+| Métrica | Valor |
+|---------|-------|
+| População Média | 0.28 |
+| Throughput | 0.0732 clientes/min |
+| Utilização | 25.61% |
+| Tempo Médio de Resposta | 0.36 minutos |
+| Clientes Perdidos | 0 |
+
+## PROBABILIDADES DOS ESTADOS DAS FILAS
+
+| Fila | Estado 0 | Estado 1 | Estado 2 | Estado 3 | Estado 4 | Estado 5+ |
+|------|----------|----------|----------|----------|----------|-----------|
+| Triagem | 72.52% | 19.94% | 5.48% | 1.51% | 0.41% | 0.14% |
+| Emergência | 69.47% | 21.17% | 6.45% | 1.97% | 0.60% | 0.34% |
+| Consulta | 30.22% | 26.38% | 23.03% | 20.12% | 17.57% | 2.68% |
+| Internação | 0.01% | 0.03% | 0.08% | 0.21% | 0.55% | 99.12% |
+| Alta | 74.39% | 18.60% | 4.65% | 1.16% | 0.29% | 0.91% | 

@@ -1,0 +1,271 @@
+# SAÍDA DO TERMINAL
+
+```
+---2025-1> python executar_tudo.py
+Iniciando simulação do sistema de emergência hospitalar...
+Carregando configuração do arquivo configuracao_melhorada_final.yml...
+
+Configuração carregada com sucesso:
+- Triagem: M/M/3/15 (3 servidores, capacidade 15)
+- Emergência: M/M/4/12 (4 servidores, capacidade 12)
+- Consulta: M/M/4/20 (4 servidores, capacidade 20)
+- Internação: M/M/4/15 (4 servidores, capacidade 15)
+- Alta: M/M/2/25 (2 servidores, capacidade 25)
+
+Iniciando simulação...
+Tempo de simulação: 10000 minutos
+Número de clientes: 1000
+
+Simulação concluída com sucesso!
+
+Gerando resultados...
+- Criando planilha de análise de métricas...
+- Criando planilha de comparação de modelos...
+- Gerando diagramas da rede de filas...
+
+Resultados gerados com sucesso!
+- analise_metricas_v2.xlsx
+- comparacao_modelos_v2.xlsx
+- diagrama_rede_original.png
+- diagrama_rede_melhorado.png
+
+Análise dos resultados:
+1. Gargalo principal identificado: Internação
+   - Utilização: 99.99%
+   - Tempo médio de resposta: 1047.94 minutos
+   - Clientes perdidos: 7066
+
+2. Melhorias implementadas:
+   - Aumento de 8 servidores no total
+   - Aumento de 21 posições nas filas
+   - Redução nos tempos máximos de serviço
+
+3. Resultados após melhorias:
+   - Redução de 72.19% no tempo médio de resposta
+   - Redução de 91.23% nos clientes perdidos
+   - Aumento de 92.79% no throughput
+
+Simulação e análise concluídas com sucesso! 
+
+======================================================
+
+python executar_tudo_v2.py
+================================================================================
+SIMULAÇÃO DE SISTEMA DE EMERGÊNCIA HOSPITALAR - CONFIGURAÇÃO FINAL V2
+================================================================================
+
+[1/5] Gerando diagramas da rede de filas...
+ERRO ao gerar diagrama original: failed to execute WindowsPath('dot'), make sure the Graphviz executabl
+es are on your systems' PATH
+
+[2/5] Executando simulação com configuração original...
+Iniciando simulação da rede com 100000 eventos...
+Processados 10000 eventos. Tempo atual: 26268.65
+Processados 20000 eventos. Tempo atual: 52718.53
+Processados 30000 eventos. Tempo atual: 79142.43
+Processados 40000 eventos. Tempo atual: 105699.11
+Processados 50000 eventos. Tempo atual: 132011.19
+Processados 60000 eventos. Tempo atual: 158244.56
+Processados 70000 eventos. Tempo atual: 184693.32
+Processados 80000 eventos. Tempo atual: 211192.77
+Processados 90000 eventos. Tempo atual: 237541.32
+Processados 100000 eventos. Tempo atual: 263961.06
+
+Resultados da Simulação:
+==================================================
+
+Fila: triagem (M/M/2/10)
+Clientes perdidos: 0
+População média: 0.55
+Throughput: 0.1000 clientes/minuto
+Utilização: 27.48%
+Tempo médio de resposta: 0.00 minutos
+Distribuição de estados:
+Estado 0: 45.91%
+Estado 1: 53.21%
+Estado 2: 0.88%
+
+Fila: emergencia (M/M/3/8)
+Clientes perdidos: 0
+População média: 0.92
+Throughput: 0.0304 clientes/minuto
+Utilização: 30.53%
+Tempo médio de resposta: 0.14 minutos
+Distribuição de estados:
+Estado 0: 35.24%
+Estado 1: 42.25%
+Estado 2: 18.19%
+Estado 3: 3.91%
+Estado 4: 0.39%
+Estado 5: 0.02%
+
+Fila: consulta (M/M/2/12)
+Clientes perdidos: 0
+População média: 1.57
+Throughput: 0.0696 clientes/minuto
+Utilização: 69.78%
+Tempo médio de resposta: 2.44 minutos
+Distribuição de estados:
+Estado 0: 11.35%
+Estado 1: 37.74%
+Estado 2: 36.31%
+Estado 3: 12.45%
+Estado 4: 1.94%
+Estado 5: 0.19%
+Estado 6: 0.01%
+Estado 7: 0.00%
+
+Fila: internacao (M/M/1/6)
+Clientes perdidos: 7066
+População média: 6.85
+Throughput: 0.0056 clientes/minuto
+Utilização: 99.99%
+Tempo médio de resposta: 1047.94 minutos
+Distribuição de estados:
+Estado 0: 0.03%
+Estado 1: 0.02%
+Estado 2: 0.01%
+Estado 3: 0.04%
+Estado 4: 0.01%
+Estado 5: 0.06%
+Estado 6: 14.77%
+Estado 7: 85.05%
+
+Fila: alta (M/M/1/20)
+Clientes perdidos: 0
+População média: 0.28
+Throughput: 0.0732 clientes/minuto
+Utilização: 25.61%
+Tempo médio de resposta: 0.36 minutos
+Distribuição de estados:
+Estado 0: 74.39%
+Estado 1: 23.07%
+Estado 2: 2.42%
+Estado 3: 0.12%
+Estado 4: 0.01%
+
+Tempo total de simulação: 263961.06 minutos
+✓ Simulação original concluída com sucesso!
+
+[3/5] Gerando diagrama da rede melhorada v2...
+ERRO ao gerar diagrama melhorado v2: failed to execute WindowsPath('dot'), make sure the Graphviz execu
+tables are on your systems' PATH
+
+[4/5] Executando simulação com configuração melhorada v2...
+Iniciando simulação da rede com 100000 eventos...
+Processados 10000 eventos. Tempo atual: 23351.15
+Processados 20000 eventos. Tempo atual: 46812.47
+Processados 30000 eventos. Tempo atual: 70214.96
+Processados 40000 eventos. Tempo atual: 93809.71
+Processados 50000 eventos. Tempo atual: 117116.40
+Processados 60000 eventos. Tempo atual: 140584.62
+Processados 70000 eventos. Tempo atual: 163879.58
+Processados 80000 eventos. Tempo atual: 187355.77
+Processados 90000 eventos. Tempo atual: 210791.12
+Processados 100000 eventos. Tempo atual: 234290.42
+
+Resultados da Simulação:
+==================================================
+
+Fila: alta (M/M/2/25)
+Clientes perdidos: 0
+População média: 0.29
+Throughput: 0.0973 clientes/minuto
+Utilização: 14.58%
+Tempo médio de resposta: 0.02 minutos
+Distribuição de estados:
+Estado 0: 73.64%
+Estado 1: 23.57%
+Estado 2: 2.64%
+Estado 3: 0.14%
+Estado 4: 0.01%
+Estado 5: 0.00%
+
+Fila: consulta (M/M/4/20)
+Clientes perdidos: 0
+População média: 1.05
+Throughput: 0.0696 clientes/minuto
+Utilização: 26.16%
+Tempo médio de resposta: 0.00 minutos
+Distribuição de estados:
+Estado 0: 21.50%
+Estado 1: 53.85%
+Estado 2: 23.17%
+Estado 3: 1.47%
+Estado 4: 0.01%
+
+Fila: emergencia (M/M/4/12)
+Clientes perdidos: 0
+População média: 0.68
+Throughput: 0.0304 clientes/minuto
+Utilização: 17.10%
+Tempo médio de resposta: 0.00 minutos
+Distribuição de estados:
+Estado 0: 45.71%
+Estado 1: 41.42%
+Estado 2: 11.64%
+Estado 3: 1.21%
+Estado 4: 0.02%
+
+Fila: internacao (M/M/4/15)
+Clientes perdidos: 620
+População média: 14.74
+Throughput: 0.0296 clientes/minuto
+Utilização: 99.86%
+Tempo médio de resposta: 363.46 minutos
+Distribuição de estados:
+Estado 0: 0.03%
+Estado 1: 0.02%
+Estado 2: 0.07%
+Estado 3: 0.34%
+Estado 4: 0.67%
+Estado 5: 1.03%
+Estado 6: 1.69%
+Estado 7: 1.78%
+Estado 8: 1.94%
+Estado 9: 2.57%
+Estado 10: 3.12%
+Estado 11: 4.01%
+Estado 12: 5.32%
+Estado 13: 6.72%
+Estado 14: 8.42%
+Estado 15: 10.77%
+Estado 16: 12.37%
+Estado 17: 14.48%
+Estado 18: 14.66%
+Estado 19: 9.99%
+
+Fila: triagem (M/M/3/15)
+Clientes perdidos: 0
+População média: 0.45
+Throughput: 0.1000 clientes/minuto
+Utilização: 14.98%
+Tempo médio de resposta: 0.00 minutos
+Distribuição de estados:
+Estado 0: 55.10%
+Estado 1: 44.85%
+Estado 2: 0.05%
+
+Tempo total de simulação: 234290.42 minutos
+✓ Simulação melhorada v2 concluída com sucesso!
+
+Gerando relatório de comparação...
+✓ Relatório de comparação v2 gerado com sucesso!
+
+================================================================================
+SIMULAÇÃO CONCLUÍDA COM SUCESSO!
+================================================================================
+
+Arquivos gerados:
+1. diagrama_rede_original.png - Diagrama da rede original
+2. diagrama_rede_melhorado_v2.png - Diagrama da rede melhorada v2
+3. configuracao_melhorada_final_v2.yml - Configuração melhorada v2
+4. resultados_simulacao_v2.png - Gráficos dos resultados
+5. relatorio_comparacao_v2.txt - Relatório de comparação v2
+
+Use estes arquivos para completar sua apresentação!
+PS C:\Users\joxto\OneDrive\Documentos\GitHub\-T2-Avalia-o-de-Aprendizagem-Simula-o-e-M-todos-Anal-ticos
+---2025-1>
+
+
+

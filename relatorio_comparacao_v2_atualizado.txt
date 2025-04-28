@@ -1,0 +1,138 @@
+COMPARAÇÃO ENTRE CONFIGURAÇÕES ORIGINAL E MELHORADA V2
+================================================================================
+
+1. VISÃO GERAL DO SISTEMA
+--------------------------------------------------------------------------------
+Total de servidores adicionados: 8
+Total de posições de fila adicionadas: 21
+Redução média no tempo de resposta: 72.19%
+Redução total de clientes perdidos: 91.23%
+Melhoria no throughput total: 92.79%
+
+2. ANÁLISE DETALHADA POR FILA
+--------------------------------------------------------------------------------
+
+TRIAGEM (M/M/2/10 → M/M/3/15)
+----------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+População média           0.55            0.45            18.23          
+Throughput               0.1000          0.1000          -0.03          
+Utilização (%)           27.48           14.98           -12.50         
+Tempo médio resposta     0.00            0.00            0.00           
+Clientes perdidos        0               0               0.00           
+
+Análise: A adição de um servidor e 5 posições melhorou significativamente a 
+eficiência, reduzindo a utilização sem impactar o throughput.
+
+EMERGÊNCIA (M/M/3/8 → M/M/4/12)
+----------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+População média           0.92            0.68            25.64          
+Throughput               0.0304          0.0304          -0.09          
+Utilização (%)           30.53           17.10           -13.43         
+Tempo médio resposta     0.14            0.00            100.00         
+Clientes perdidos        0               0               0.00           
+
+Análise: O aumento para 4 servidores eliminou o tempo de espera e reduziu 
+significativamente a utilização do sistema.
+
+CONSULTA (M/M/2/12 → M/M/4/20)
+----------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+População média           1.57            1.05            33.15          
+Throughput               0.0696          0.0696          -0.01          
+Utilização (%)           69.78           26.16           -43.62         
+Tempo médio resposta     2.44            0.00            100.00         
+Clientes perdidos        0               0               0.00           
+
+Análise: A duplicação do número de servidores resultou em uma redução dramática 
+na utilização e eliminou o tempo de espera.
+
+INTERNAÇÃO (M/M/1/6 → M/M/4/15)
+----------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+População média           6.85            14.74           -115.34        
+Throughput               0.0056          0.0296          431.19         
+Utilização (%)           99.99           99.86           -0.12          
+Tempo médio resposta     1047.94         363.46          65.32          
+Clientes perdidos        7066            620             91.23          
+
+Análise: Melhoria mais significativa do sistema, com redução drástica nos 
+clientes perdidos e aumento expressivo no throughput.
+
+ALTA (M/M/1/20 → M/M/2/25)
+----------------------------------------------------------------------
+Métrica                   Original        Melhorada V2    Melhoria (%)   
+População média           0.28            0.29            -3.62          
+Throughput               0.0732          0.0973          32.87          
+Utilização (%)           25.61           14.58           -11.04         
+Tempo médio resposta     0.36            0.02            95.61          
+Clientes perdidos        0               0               0.00           
+
+Análise: Dobrar os servidores melhorou significativamente o throughput e 
+o tempo de resposta.
+
+3. ANÁLISE DE GARGALOS
+--------------------------------------------------------------------------------
+Principal gargalo identificado: Setor de Internação
+- Ainda mantém utilização próxima a 100%
+- Apresenta o maior tempo médio de resposta
+- Único setor com perda de pacientes
+
+Gargalos resolvidos:
+1. Consulta: Redução de utilização de 69.78% para 26.16%
+2. Emergência: Eliminação do tempo de espera
+3. Alta: Aumento significativo no throughput
+
+4. IMPACTO DAS MELHORIAS
+--------------------------------------------------------------------------------
+Benefícios Quantitativos:
+- Redução de 91.23% nos pacientes perdidos
+- Aumento de 431.19% no throughput da internação
+- Redução média de 72.19% nos tempos de resposta
+
+Benefícios Qualitativos:
+- Melhor distribuição da carga de trabalho
+- Maior capacidade de absorção de picos de demanda
+- Redução do estresse na equipe devido à menor utilização
+
+5. RECOMENDAÇÕES PARA OTIMIZAÇÃO CONTÍNUA
+--------------------------------------------------------------------------------
+Curto Prazo:
+1. Implementar sistema de priorização de pacientes
+2. Desenvolver protocolos para gestão de picos de demanda
+3. Estabelecer indicadores de monitoramento contínuo
+
+Médio Prazo:
+1. Avaliar implementação de telemedicina
+2. Desenvolver parcerias com outros hospitais
+3. Criar programa de gestão de leitos
+
+Longo Prazo:
+1. Planejamento para expansão física do setor de internação
+2. Implementação de sistemas preditivos de demanda
+3. Desenvolvimento de protocolos de alta eficiente
+
+6. CONCLUSÕES FINAIS
+--------------------------------------------------------------------------------
+A nova configuração apresenta melhorias significativas em praticamente todos 
+os aspectos do sistema, com destaque para:
+
+1. Eficiência Operacional:
+   - Redução significativa nos tempos de espera
+   - Melhor utilização dos recursos
+   - Aumento expressivo no throughput
+
+2. Qualidade do Atendimento:
+   - Redução drástica de pacientes perdidos
+   - Tempos de resposta mais adequados
+   - Maior capacidade de atendimento
+
+3. Pontos de Atenção:
+   - Monitoramento contínuo do setor de internação
+   - Necessidade de gestão eficiente de leitos
+   - Importância da implementação das recomendações propostas
+
+O sistema demonstra estar significativamente mais robusto e eficiente, 
+proporcionando um serviço de melhor qualidade aos pacientes e condições 
+de trabalho mais adequadas para a equipe. 
