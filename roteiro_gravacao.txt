@@ -1,0 +1,138 @@
+# Roteiro para Gravação da Apresentação
+
+## Introdução (Colega 1) - 2-3 minutos
+
+**Slides: Capa e Descrição da Realidade Simulada**
+
+1. **Apresentação Inicial (30 segundos)**
+   - "Olá, somos [Nomes dos três colegas] e hoje vamos apresentar nossa análise de simulação de um sistema de emergência hospitalar."
+   - "Nosso trabalho consistiu em modelar, analisar e propor melhorias para otimizar o fluxo de pacientes em um departamento de emergência."
+
+2. **Descrição da Realidade (1-2 minutos)**
+   - "O sistema que simulamos representa um departamento de emergência hospitalar com cinco componentes principais:"
+   - "A triagem, que é o primeiro atendimento e classificação dos pacientes."
+   - "A emergência, responsável pelo atendimento de casos críticos."
+   - "A consulta, que oferece atendimento médico especializado."
+   - "A internação, que fornece cuidados intensivos e monitoramento."
+   - "E finalmente, a alta, que é o processo de liberação do paciente."
+   - "Os principais desafios identificados foram os longos tempos de espera, alta ocupação e perda de pacientes."
+
+## Modelo e Resultados Iniciais (Colega 2) - 3-4 minutos
+
+**Slides: Modelo da Rede de Filas e Resultados da Simulação - Modelo Original**
+
+1. **Modelo da Rede de Filas (1-2 minutos)**
+   - "Para modelar este sistema, utilizamos a notação de Kendall M/M/s/K, onde:"
+   - "O primeiro M representa a distribuição de chegadas Poisson."
+   - "O segundo M representa a distribuição de serviço Exponencial."
+   - "O s representa o número de servidores."
+   - "E o K representa a capacidade da fila."
+   - "Na configuração original, tínhamos:"
+   - "Triagem com 2 servidores e capacidade para 10 pacientes."
+   - "Emergência com 3 servidores e capacidade para 8 pacientes."
+   - "Consulta com 2 servidores e capacidade para 12 pacientes."
+   - "Internação com apenas 1 servidor e capacidade para 6 pacientes."
+   - "E Alta com 1 servidor e capacidade para 20 pacientes."
+
+2. **Resultados da Simulação Original (2 minutos)**
+   - "Após executar a simulação com esta configuração, obtivemos os seguintes resultados:"
+   - "Na triagem, tivemos uma população média de 0,55 pacientes, com utilização de 27,48% e nenhum cliente perdido."
+   - "Na emergência, a população média foi de 0,92 pacientes, com utilização de 30,53% e tempo médio de resposta de 0,14 minutos."
+   - "Na consulta, tivemos uma população média de 1,57 pacientes, com utilização de 69,78% e tempo médio de resposta de 2,44 minutos."
+   - "Na internação, identificamos um problema crítico: população média de 6,85 pacientes, utilização de 99,99%, tempo médio de resposta de 1047,94 minutos e 7066 pacientes perdidos."
+   - "Na alta, tivemos uma população média de 0,28 pacientes, com utilização de 25,61% e tempo médio de resposta de 0,36 minutos."
+
+## Análise de Gargalos e Melhorias (Colega 3) - 3-4 minutos
+
+**Slides: Análise de Gargalos e Proposta de Melhoria**
+
+1. **Análise de Gargalos (1-2 minutos)**
+   - "Com base nos resultados, identificamos claramente os gargalos do sistema:"
+   - "O principal problema estava na fila de internação, com utilização extremamente alta de 99,99%, tempo de resposta de mais de 17 horas e 7066 pacientes perdidos."
+   - "A distribuição de estados da fila de internação mostrava um desequilíbrio significativo, com 85,05% do tempo no estado 7, indicando que a fila estava constantemente cheia."
+   - "Também identificamos um problema na fila de consulta, com alta utilização de 69,78% e tempo de resposta significativo de 2,44 minutos."
+   - "Estes gargalos resultavam em sobrecarga no setor de internação, insatisfação dos pacientes, perda de eficiência operacional e riscos para a saúde dos pacientes."
+
+2. **Proposta de Melhoria (2 minutos)**
+   - "Para resolver estes problemas, propusemos as seguintes alterações:"
+   - "Na triagem: aumento de 1 servidor e 5 posições de capacidade."
+   - "Na emergência: aumento de 1 servidor e 4 posições de capacidade."
+   - "Na consulta: aumento de 2 servidores e 8 posições de capacidade."
+   - "Na internação: aumento de 3 servidores e 9 posições de capacidade."
+   - "Na alta: aumento de 1 servidor e 5 posições de capacidade."
+   - "Estas alterações visavam reduzir os tempos de espera, diminuir as perdas de pacientes e otimizar o fluxo entre as filas."
+
+## Comparação e Conclusões (Colega 1) - 3-4 minutos
+
+**Slides: Comparação dos Resultados e Análise das Melhorias**
+
+1. **Comparação dos Resultados (2 minutos)**
+   - "Após implementar estas melhorias, obtivemos resultados significativamente melhores:"
+   - "Na triagem: redução de 18,18% na população média e 45,49% na utilização."
+   - "Na emergência: redução de 26,09% na população média, 43,99% na utilização e eliminação completa do tempo de resposta."
+   - "Na consulta: redução de 33,12% na população média, 62,51% na utilização e eliminação completa do tempo de resposta."
+   - "Na internação: aumento de 115,18% na população média, mas redução de 65,32% no tempo de resposta e 91,23% nos clientes perdidos."
+   - "Na alta: pequeno aumento de 3,57% na população média, mas aumento de 32,92% no throughput e redução de 94,44% no tempo de resposta."
+   - "A distribuição de estados da fila de internação também melhorou significativamente, com uma distribuição mais equilibrada entre os estados."
+
+2. **Análise das Melhorias (1-2 minutos)**
+   - "As melhorias implementadas resultaram em:"
+   - "Redução drástica de 91,23% no número de clientes perdidos."
+   - "Diminuição expressiva nos tempos de resposta em todas as filas."
+   - "Melhor distribuição da carga de trabalho, com redução na utilização de todas as filas."
+   - "Aumento significativo no throughput da fila de internação (428,57%) e da fila de alta (32,92%)."
+   - "No entanto, ainda identificamos alguns pontos de atenção:"
+   - "A fila de internação ainda apresenta alta utilização de 99,86%."
+   - "Houve um aumento na população média da fila de internação (+115,18%), o que pode indicar necessidade de ajustes adicionais."
+
+## Conclusões e Recomendações (Colega 2) - 2-3 minutos
+
+**Slides: Conclusões e Referências**
+
+1. **Conclusões (1-2 minutos)**
+   - "Com base em nossa análise, podemos concluir que:"
+   - "As alterações propostas resultaram em melhorias significativas no sistema."
+   - "A redução drástica no número de clientes perdidos e nos tempos de resposta demonstra a eficácia das melhorias."
+   - "O sistema agora oferece uma melhor experiência para os pacientes, maior eficiência operacional e redução de riscos para a saúde."
+   - "No entanto, a fila de internação ainda apresenta desafios que precisam ser monitorados continuamente."
+
+2. **Recomendações Futuras (1 minuto)**
+   - "Para o futuro, recomendamos:"
+   - "No curto prazo: implementar um sistema de priorização de pacientes e desenvolver protocolos para gestão de picos de demanda."
+   - "No médio prazo: avaliar a implementação de telemedicina e desenvolver parcerias com outros hospitais."
+   - "No longo prazo: planejar a expansão física do setor de internação e implementar sistemas preditivos de demanda."
+   - "Estas recomendações visam garantir a sustentabilidade das melhorias implementadas e o contínuo aprimoramento do sistema."
+
+## Encerramento (Colega 3) - 30 segundos
+
+**Slides: Referências**
+
+1. **Encerramento (30 segundos)**
+   - "Gostaríamos de agradecer a atenção de todos."
+   - "Nossa simulação demonstrou como a análise de sistemas de filas pode contribuir significativamente para a otimização de processos em ambientes hospitalares."
+   - "As melhorias implementadas resultaram em benefícios tangíveis para pacientes e profissionais de saúde."
+   - "Obrigado!"
+
+## Dicas para Gravação
+
+1. **Preparação:**
+   - Pratiquem cada parte individualmente antes da gravação
+   - Familiarizem-se com os números e estatísticas
+   - Preparem exemplos concretos para ilustrar os pontos principais
+
+2. **Durante a Gravação:**
+   - Falem de forma clara e em ritmo moderado
+   - Mantenham contato visual com a câmera
+   - Usem gestos naturais para enfatizar pontos importantes
+   - Façam transições suaves entre os tópicos
+
+3. **Edição:**
+   - Adicionem legendas para facilitar o entendimento
+   - Incluam transições suaves entre os segmentos
+   - Verifiquem se o áudio está claro e consistente
+   - Adicionem uma introdução e conclusão ao vídeo final
+
+4. **Tempo Total Estimado:**
+   - A apresentação completa deve durar aproximadamente 12-15 minutos
+   - Cada colega fala por cerca de 4-5 minutos
+   - Reserve tempo para transições e possíveis retakes 

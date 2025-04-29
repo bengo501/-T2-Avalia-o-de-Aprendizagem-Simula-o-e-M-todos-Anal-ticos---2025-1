@@ -1,0 +1,67 @@
+ROTEIRO DO PROJETO: SIMULAÇÃO DE EMERGÊNCIA HOSPITALAR
+
+1. VISÃO GERAL
+-------------
+Este projeto implementa uma simulação de um sistema de emergência hospitalar, utilizando teoria de filas e análise de desempenho. O sistema é modelado usando a notação de Kendall e analisa métricas importantes como tempo de espera, ocupação e throughput.
+
+2. ESTRUTURA DO PROJETO
+----------------------
+- simulacao_emergencia.py: Código principal da simulação
+- configuracao.yml: Arquivo de configuração do sistema
+- requirements.txt: Dependências do projeto
+- README.md: Documentação do projeto
+
+3. COMPONENTES PRINCIPAIS
+------------------------
+3.1 Sistema de Filas
+    - Fila de Triagem (M/M/1)
+    - Fila de Atendimento (M/M/3)
+    - Fila de Observação (M/M/2)
+
+3.2 Configurações
+    - Taxas de chegada
+    - Taxas de serviço
+    - Capacidades das filas
+    - Tempos de processamento
+
+4. MÉTRICAS ANALISADAS
+---------------------
+- Tempo médio de espera
+- Tempo médio no sistema
+- Ocupação dos servidores
+- Throughput
+- Tamanho médio das filas
+- Probabilidade de bloqueio
+
+5. VISUALIZAÇÃO
+--------------
+- Gráficos de desempenho
+- Diagramas de estado
+- Análises estatísticas
+
+6. REQUISITOS TÉCNICOS
+---------------------
+- Python 3.x
+- Bibliotecas: simpy, numpy, pandas, matplotlib
+- Graphviz (para visualização)
+
+7. ANÁLISE DE DESEMPENHO
+------------------------
+- Comparação de diferentes configurações
+- Identificação de gargalos
+- Otimização de recursos
+- Recomendações de melhorias
+
+8. DOCUMENTAÇÃO
+--------------
+- Instruções de instalação
+- Guia de uso
+- Explicação das métricas
+- Interpretação dos resultados
+
+9. CONSIDERAÇÕES FINAIS
+-----------------------
+- Limitações do modelo
+- Possíveis melhorias
+- Aplicações práticas
+- Conclusões e recomendações 
