@@ -211,6 +211,4 @@ Arquivos gerados:
 3. configuracao_melhorada_final_v2.yml - Configuração melhorada v2
 4. resultados_simulacao_v2.png - Gráficos dos resultados
 5. relatorio_comparacao_v2.txt - Relatório de comparação v2
-
-Use estes arquivos para completar sua apresentação!
 PS C:\Users\joxto\OneDrive\Documentos\GitHub\-T2-Avalia-o-de-Aprendizagem-Simula-o-e-M-todos-Anal-ticos---2025-1>
