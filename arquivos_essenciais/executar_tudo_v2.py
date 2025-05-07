@@ -131,7 +131,6 @@ def executar_simulacao_completa():
     print("3. configuracao_melhorada_final_v2.yml - Configuração melhorada v2")
     print("4. resultados_simulacao_v2.png - Gráficos dos resultados")
     print("5. relatorio_comparacao_v2.txt - Relatório de comparação v2")
-    print("\nUse estes arquivos para completar sua apresentação!")
 
 if __name__ == "__main__":
     executar_simulacao_completa() 
